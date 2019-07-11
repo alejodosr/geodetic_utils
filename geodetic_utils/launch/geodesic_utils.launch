@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<rosparam param="/gps_ref_latitude">40.4394583892</rosparam>
+	<rosparam param="/gps_ref_longitude">-3.68832657247 </rosparam>
+	<rosparam param="/gps_ref_altitude">729.52545166</rosparam>
+    	<node name="geodetic_utils" type="gps_to_pose_conversion_node" pkg="geodetic_utils" output="screen">
+		<param name="is_sim"	value="false" type="bool"/>
+		<param name="trust_gps"	value="false" type="bool"/>
+		<param name="publish_pose"	value="true" type="bool"/>
+		<param name="gps_ref_latitude"	value="40.4394583892" type="double"/>
+		<param name="gps_ref_longitude"	value="-3.68832657247" type="double"/>
+		<param name="gps_ref_altitude"	value="729.52545166" type="double"/>
+	</node>
+</launch>

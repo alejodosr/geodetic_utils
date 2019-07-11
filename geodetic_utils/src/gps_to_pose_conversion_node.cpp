@@ -238,8 +238,8 @@ int main(int argc, char **argv) {
       nh.advertise<geometry_msgs::PointStamped>("gps_position", 1);
 
   // Subscribe to IMU and GPS fixes, and convert in GPS callback
-  ros::Subscriber imu_sub = nh.subscribe("imu", 1, &imu_callback);
-  ros::Subscriber gps_sub = nh.subscribe("gps", 1, &gps_callback);
+  ros::Subscriber imu_sub = nh.subscribe("/drone6/dji_sdk/imu", 1, &imu_callback);
+  ros::Subscriber gps_sub = nh.subscribe("/drone6/dji_sdk/rtk_position", 1, &gps_callback);
   ros::Subscriber altitude_sub =
      nh.subscribe("external_altitude", 1, &altitude_callback);
 
